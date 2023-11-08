@@ -9,6 +9,7 @@ dotenv.config()
 server.use(express.json());
 server.use(cors())
 server.use(bodyParser.json())
+server.use(express.static(process.env.DIST_DIR))
 
 main();
 async function main() {

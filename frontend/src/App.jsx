@@ -14,15 +14,14 @@ function App() {
     // Tell how much time left for midnight 
     const secondsToMidnight = (n) => {
         return (
-            // ((24 - n.getHours() - 1) * 60 * 60) + ((60 - n.getMinutes() - 1) * 60) +
-            (60 - n.getSeconds())
+            ((24 - n.getHours() - 1) * 60 * 60) + ((60 - n.getMinutes() - 1) * 60) + (60 - n.getSeconds())
         )
     }
 
     // Fetch a quote for the Quote of the Day
     const quoteOfTheDay = () => {
         axios
-            .get("http://localhost:8080/quoteOfDay")
+            .get("/quoteOfDay")
             .then((response) => {
                 const currentTime = new Date()
                 const expiry = currentTime.getTime() + (secondsToMidnight(currentTime) * 1000)
@@ -42,7 +41,7 @@ function App() {
     // Fetch all quotes by author name
     const quoteByAuthor = (authorName) => {
         axios
-            .post("http://localhost:8080/authorQuotes", { author: authorName })
+            .post("/authorQuotes", { author: authorName })
             .then((response) => {
                 const quotes = response.data.map(item => item.quote); // Extract quotes from the response
                 setSelectedAuthor(authorName);
@@ -57,7 +56,7 @@ function App() {
     // Fetch all authors name
     const allAuthors = () => {
         axios
-            .get("http://localhost:8080/authors")
+            .get("/authors")
             .then((response) => {
                 setAuthors(response.data);
             })
@@ -67,6 +66,8 @@ function App() {
                 alert("Error happened!");
             })
     }
+
+
 
 
     useEffect(() => {
@@ -86,7 +87,7 @@ function App() {
                 setAuthorName(storedAuthor)
             }
         }
-    }, [secondsToMidnight]);
+    }, [secondsToMidnight])
 
     return (
         <>
