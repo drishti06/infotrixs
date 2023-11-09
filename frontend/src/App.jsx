@@ -80,16 +80,17 @@ function App() {
                 localStorage.removeItem("author");
                 localStorage.removeItem("expiry");
                 quoteOfTheDay();
-            } else if {
+            }else if(typeof localstorage === "undefined"){
+            quoteOfTheDay();
+        }
+            else {
                 const storedQuote = JSON.parse(localStorage.getItem("quote"));
                 const storedAuthor = JSON.parse(localStorage.getItem("author"));
                 setQuote(storedQuote);
                 setAuthorName(storedAuthor)
             }
         }
-        else{
-            quoteOfTheDay();
-        }
+        
     }, [])
 
     return (
