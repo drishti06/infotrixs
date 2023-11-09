@@ -25,14 +25,11 @@ function App() {
             .then((response) => {
                 const currentTime = new Date()
                 const expiry = currentTime.getTime() + (secondsToMidnight(currentTime) * 1000)
-                if(currentTime.getTime() == expiry){
+                setAuthorName(response.data.author)
+                setQuote(response.data.quote);
                 localStorage.quote = JSON.stringify(response.data.quote)
                 localStorage.author = JSON.stringify(response.data.author)
                 localStorage.expiry = expiry
-                }
-                setAuthorName(response.data.author)
-                console.log(response.data.author)
-                setQuote(response.data.quote);
             })
             .catch((error) => {
                 console.log(error);
@@ -75,7 +72,7 @@ function App() {
     useEffect(() => {
         allAuthors();
        
-        if (typeof localStorage !== "undefined" && localStorage.quote) {
+        if (typeof localStorage !== "undefined" || localStorage.quote) {
             const quoteExpiry = parseInt(localStorage.getItem("expiry"));
             const now = new Date();
             if (now.getTime() > quoteExpiry) {
