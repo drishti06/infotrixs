@@ -7,9 +7,7 @@ import bodyParser from "body-parser";
 const server = express();
 dotenv.config()
 
-server.use(cors({
-  origin: ["https://infotrixs-backend.vercel.app"]
-})
+server.use(cors())
 server.use(express.json());
 server.use(bodyParser.json())
 
