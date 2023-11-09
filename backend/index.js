@@ -6,12 +6,13 @@ import cors from "cors"
 import bodyParser from "body-parser";
 const server = express();
 dotenv.config()
-server.use(express.json());
+
 server.use(cors({
-  origin:"https://infotrixs-backend.vercel.app",
-  methods:["POST", "GET"],
+  origin: ["https://infotrixs-backend.vercel.app"],
+  methods: ["POST", "GET"],
   credentials: true
 })
+server.use(express.json());
 server.use(bodyParser.json())
 
 
