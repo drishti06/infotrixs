@@ -21,7 +21,11 @@ async function main() {
     });
 }
 
+server.get("/",(req.res)=>{
+  res.json("hello")
+})
+
 // Route related quotes like : fetchng by author, fetching random quote, etc.
-server.use("/", router);
+server.use("/api", router);
 
 server.listen(process.env.PORT || 8080);
