@@ -10,7 +10,7 @@ function App() {
     const [authorName, setAuthorName] = useState("")
     const [selectedAuthor, setSelectedAuthor] = useState("");
     const [authorQuotes, setAuthorQuotes] = useState([]);
-
+    axios.defaults.credentials = true;
     // Tell how much time left for midnight 
     const secondsToMidnight = (n) => {
         return (
