@@ -21,7 +21,7 @@ async function main() {
     });
 }
 
-server.get("/",(req.res)=>{
+server.get("/",(req,res)=>{
   res.json("hello")
 })
 
