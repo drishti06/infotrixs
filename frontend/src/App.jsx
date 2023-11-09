@@ -21,7 +21,7 @@ function App() {
     // Fetch a quote for the Quote of the Day
     const quoteOfTheDay = () => {
         axios
-            .get("/quoteOfDay")
+            .get("https://infotrixs-two.vercel.app//quoteOfDay")
             .then((response) => {
                 const currentTime = new Date()
                 const expiry = currentTime.getTime() + (secondsToMidnight(currentTime) * 1000)
@@ -41,7 +41,7 @@ function App() {
     // Fetch all quotes by author name
     const quoteByAuthor = (authorName) => {
         axios
-            .post("/authorQuotes", { author: authorName })
+            .post("https://infotrixs-two.vercel.app//authorQuotes", { author: authorName })
             .then((response) => {
                 const quotes = response.data.map(item => item.quote); // Extract quotes from the response
                 setSelectedAuthor(authorName);
@@ -56,7 +56,7 @@ function App() {
     // Fetch all authors name
     const allAuthors = () => {
         axios
-            .get("/authors")
+            .get("https://infotrixs-two.vercel.app//authors")
             .then((response) => {
                 setAuthors(response.data);
             })
