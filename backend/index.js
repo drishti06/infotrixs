@@ -8,9 +8,7 @@ const server = express();
 dotenv.config()
 
 server.use(cors({
-  origin: ["https://infotrixs-backend.vercel.app"],
-  methods: ["POST", "GET"],
-  credentials: true
+  origin: ["https://infotrixs-backend.vercel.app"]
 })
 server.use(express.json());
 server.use(bodyParser.json())
