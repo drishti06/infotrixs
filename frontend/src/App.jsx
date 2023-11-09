@@ -72,7 +72,7 @@ function App() {
     useEffect(() => {
         allAuthors();
        
-        if (typeof localStorage !== "undefined" || localStorage.quote) {
+        if (typeof localStorage !== "undefined" && localStorage.quote) {
             const quoteExpiry = parseInt(localStorage.getItem("expiry"));
             const now = new Date();
             if (now.getTime() > quoteExpiry) {
@@ -87,7 +87,7 @@ function App() {
                 setAuthorName(storedAuthor)
             }
         }
-    }, [secondsToMidnight])
+    }, [])
 
     return (
         <>
