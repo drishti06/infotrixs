@@ -72,7 +72,7 @@ function App() {
 
     useEffect(() => {
         allAuthors();
-         quoteOfTheDay();
+       
         if (typeof localStorage !== "undefined" && localStorage.quote) {
             const quoteExpiry = parseInt(localStorage.getItem("expiry"));
             const now = new Date();
