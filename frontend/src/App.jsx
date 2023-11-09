@@ -92,7 +92,7 @@ function App() {
             quoteOfTheDay();
         }
         
-    }, [])
+    }, [secondsToMidnight])
 
     return (
         <>
