@@ -80,12 +80,15 @@ function App() {
                 localStorage.removeItem("author");
                 localStorage.removeItem("expiry");
                 quoteOfTheDay();
-            } else {
+            } else if {
                 const storedQuote = JSON.parse(localStorage.getItem("quote"));
                 const storedAuthor = JSON.parse(localStorage.getItem("author"));
                 setQuote(storedQuote);
                 setAuthorName(storedAuthor)
             }
+        }
+        else{
+            quoteOfTheDay();
         }
     }, [])
 
