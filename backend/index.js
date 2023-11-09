@@ -13,7 +13,7 @@ server.use(cors({
   credentials: true
 })
 server.use(bodyParser.json())
-server.use(express.static(process.env.DIST_DIR))
+
 
 main();
 async function main() {
