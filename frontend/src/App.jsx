@@ -14,7 +14,7 @@ function App() {
     // Tell how much time left for midnight 
     const secondsToMidnight = (n) => {
         return (
-     60 - n.getSeconds()
+     ((24 - n.getHours() - 1) * 60 * 60) + ((60 - n.getMinutes() - 1) * 60) + (60 - n.getSeconds())
         )
     }
 
