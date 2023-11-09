@@ -108,7 +108,7 @@
 }
 
 .authors{
-    background-color:rgb(80, 200, 120) ;
+    background-color:rgb(225, 136, 3) ;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
     border-radius: 7px;
     padding: clamp(0.2rem, 6vh, 1rem);
@@ -118,7 +118,7 @@
 }
 
 .authors:hover{
-    background-color: rgb(80,210,122);
+    background-color:rgb(190, 117, 8);
     cursor: pointer;
     transition: 0.2s ease;
 }
