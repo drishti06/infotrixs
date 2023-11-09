@@ -25,7 +25,7 @@ function App() {
             .then((response) => {
                 const currentTime = new Date()
                 const expiry = currentTime.getTime() + (secondsToMidnight(currentTime) * 1000)
-                if(currentTime.getTime() = expiry){
+                if(currentTime.getTime() == expiry){
                 localStorage.quote = JSON.stringify(response.data.quote)
                 localStorage.author = JSON.stringify(response.data.author)
                 localStorage.expiry = expiry
