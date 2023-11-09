@@ -29,4 +29,4 @@ server.get("/", (req,res)=>{
 // Route related quotes like : fetchng by author, fetching random quote, etc.
 server.use("/api", router);
 
-server.listen(process.env.PORT);
+server.listen(process.env.PORT || 8080);
